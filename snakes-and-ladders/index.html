@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Snakes & Ladders</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app__header">
+        <h1>Snakes &amp; Ladders</h1>
+        <div class="app__meta">
+          <span id="currentPlayer">Player 1's turn</span>
+          <span id="diceFace" aria-live="polite" class="dice">-</span>
+        </div>
+      </header>
+
+      <section class="game">
+        <div class="board-wrap">
+          <div id="board" class="board" aria-label="Snakes and Ladders board" role="application"></div>
+          <svg id="overlay" class="overlay" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+          <div id="tokens" class="tokens" aria-hidden="true"></div>
+        </div>
+
+        <aside class="controls">
+          <div class="players">
+            <div class="player player--1">
+              <span class="token token--p1" aria-hidden="true"></span>
+              <span>Player 1</span>
+            </div>
+            <div class="player player--2">
+              <span class="token token--p2" aria-hidden="true"></span>
+              <span>Player 2</span>
+            </div>
+          </div>
+          <div class="buttons">
+            <button id="rollBtn" class="btn primary" aria-label="Roll the dice">Roll</button>
+            <button id="resetBtn" class="btn" aria-label="Reset game">Reset</button>
+          </div>
+          <div class="legend">
+            <div class="legend__item"><span class="legend__swatch ladder"></span> Ladder</div>
+            <div class="legend__item"><span class="legend__swatch snake"></span> Snake</div>
+          </div>
+          <div class="log" id="log" aria-live="polite" aria-atomic="false"></div>
+        </aside>
+      </section>
+
+      <footer class="app__footer">
+        <small>
+          Built with HTML/CSS/JS. Resize the window to see the responsive board.
+        </small>
+      </footer>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal__dialog">
+        <h2 id="modalTitle">Game Over</h2>
+        <p id="modalMessage"></p>
+        <button id="modalClose" class="btn primary">Play Again</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>
+
